@@ -1,0 +1,37 @@
+<button class="btn btn-outline-success" style="margin: 2em 0 0 2em" type="submit" routerLink="/add">
+  Add Todo
+</button>
+<div class="container mt-4">
+  <div class="row">
+    @for (todo of todos(); track todo._id) {
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{ todo.todo }}</h5>
+
+            <p class="card-text text-muted">
+              {{ todo.description }}
+            </p>
+
+            <p>
+              <strong>Status:</strong>
+              <span>
+                {{ todo.status ? 'Completed' : 'Pending' }}
+              </span>
+            </p>
+
+            <div class="d-flex justify-content-between">
+              <a class="btn btn-sm btn-outline-primary" [routerLink]="['/update', todo._id]">
+                Update
+              </a>
+
+              <button class="btn btn-sm btn-outline-danger" (click)="deleteTodo(todo._id)">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

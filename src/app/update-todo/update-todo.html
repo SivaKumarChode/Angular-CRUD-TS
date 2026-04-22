@@ -1,0 +1,34 @@
+<div>
+  <form (ngSubmit)="updateTodo($event)">
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Enter Todo"
+        ,
+        name="todo"
+        [(ngModel)]="UpdateFormData.todo"
+      />
+    </div>
+    <div class="mb-3">
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        placeholder="Enter Description"
+        name="description"
+        [(ngModel)]="UpdateFormData.description"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <select name="status" id="ststus" [(ngModel)]="UpdateFormData.status">
+        <option [ngValue]="false">False</option>
+        <option [ngValue]="true">True</option>
+      </select>
+    </div>
+    <div class="addTodo">
+      <button class="btn btn-outline-success">Update Todo</button>
+    </div>
+  </form>
+</div>

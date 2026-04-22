@@ -1,0 +1,27 @@
+<div>
+  <form (submit)="createTodo($event)">
+    <div class="mb-3">
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Enter Todo",
+        name="todo"
+        [(ngModel)]="formData.todo"
+      />
+    </div>
+    <div class="mb-3">
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        placeholder="Enter Description"
+        name="description"
+         [(ngModel)]="formData.description"
+      ></textarea>
+    </div>
+    <div class="addTodo">
+      <button class="btn btn-outline-success" type="submit">Create Todo</button>
+    </div>
+  </form>
+</div>
