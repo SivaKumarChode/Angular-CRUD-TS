@@ -6,7 +6,7 @@ import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-todos',
-  imports: [JsonPipe, RouterLink],
+  imports: [RouterLink],
   templateUrl: './todos.html',
   styleUrl: './todos.css',
 })
